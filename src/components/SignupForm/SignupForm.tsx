@@ -65,7 +65,7 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
       className={styles.container}
     >
       <div className={styles.inputContainer}>
-        <label htmlFor="name" className={styles.label}>Name</label>
+        <label htmlFor="name" className={styles.label}>Business/Vendor Name</label>
         <input
           type="text"
           id="name"
