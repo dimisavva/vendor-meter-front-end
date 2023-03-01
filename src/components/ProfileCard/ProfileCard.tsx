@@ -3,12 +3,14 @@ import defaultPic from '../../assets/icons/profile.png'
 
 // types
 import { Profile } from '../../types/models'
+import { RatingManagerFormData } from '../../types/forms';
 
 // components
 import RatingManager from '../RatingManager/RatingManager'
 
 interface ProfileCardProps {
   profile: Profile;
+  handleRating: (formData: RatingManagerFormData) => void;
 }
 
 const ProfileCard = (props: ProfileCardProps): JSX.Element => {

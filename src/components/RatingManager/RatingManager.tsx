@@ -4,13 +4,15 @@ import noTools from '../../assets/icons/noTools.png'
 
 // types
 import { Profile } from '../../types/models'
+import { RatingManagerFormData } from '../../types/forms'
 
 interface RatingManagerProps {
-  profile: Profile
+  profile: Profile;
+  handleRating: (FormData: RatingManagerFormData) => void;
 }
 
 const RatingManager = (props: RatingManagerProps): JSX.Element => {
-  const { profile } = props
+  const { profile, handleRating } = props
   const ratingCount = profile.ratingsReceived.length
   let ratingSum = 0
 
