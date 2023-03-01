@@ -3,6 +3,14 @@
 
 
 /* ---------===== auth models =====--------- */
+export interface Rating {
+  id: number;
+  value: number;
+  profileId: number;
+  raterId: number;
+  createdAt: string;
+  updatedAt: string;
+}
 
 export interface Profile {
   name: string;
@@ -10,6 +18,7 @@ export interface Profile {
   id: number;
   createdAt: string;
   updatedAt: string;
+  ratingsReceived: Rating[];
 }
 
 export interface User {

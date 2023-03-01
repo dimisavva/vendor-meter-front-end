@@ -1,3 +1,6 @@
+//assets 
+import tools from '../../assets/icons/tools.png'
+
 // npm modules
 import { NavLink } from 'react-router-dom'
 
@@ -14,6 +17,9 @@ const NavBar = (props: NavBarProps): JSX.Element => {
   
   return (
     <nav>
+      <NavLink to="/">
+        <img src={tools} alt="tools logo" />
+      </NavLink>
       {user ?
         <ul>
           <li>Welcome, {user.name}</li>
