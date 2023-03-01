@@ -5,6 +5,7 @@ import noTools from '../../assets/icons/noTools.png'
 // types
 import { Profile } from '../../types/models'
 import { RatingManagerFormData } from '../../types/forms'
+import React from 'react';
 
 interface RatingManagerProps {
   profile: Profile;
@@ -22,6 +23,11 @@ const RatingManager = (props: RatingManagerProps): JSX.Element => {
   
   const ratingOptions: [1, 2, 3, 4, 5] = [1, 2, 3, 4, 5]
 
+  const handleClick = (evt: React.MouseEvent<HTMLImageElement>): void => {
+    const newValue = parseInt(evt.currentTarget.id)
+    handleRating({ value: newValue, profileId: profile.id })
+  }
+
   return (
     <section>
       {ratingOptions.map((ranking: number): JSX.Element => (
@@ -30,6 +36,7 @@ const RatingManager = (props: RatingManagerProps): JSX.Element => {
           id={ranking.toString()}
           src={ranking <= profileRanking ? tools : noTools}
           alt="Tools Symbol"
+          onClick={handleClick}
         />  
       ))}
     </section>
